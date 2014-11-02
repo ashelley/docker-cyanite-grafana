@@ -25,7 +25,7 @@ The grafana dashboard is available at http://localhost
 
 Write metrics via graphite at localhost:2003
 
-Run ./test.sh to generate some test metrics - 1 minute load average
+Run ./test.sh to generate some test metrics - 1, 5 and 15 minute load averages
 
 [cyanite]: https://github.com/pyr/cyanite
 [graphite-cyanite]: https://github.com/brutasse/graphite-cyanite
