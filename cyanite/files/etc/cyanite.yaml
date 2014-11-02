@@ -1,0 +1,20 @@
+carbon:
+  host: "0.0.0.0"
+  port: 2003
+  rollups:
+    - "10s:14d"
+    - "1m:32d"
+    - "5m:90d"
+    - "1h:365d"
+http:
+  host: "0.0.0.0"
+  port: 8080
+logging:
+  level: info
+  console: true
+  files:
+    - "/var/log/cyanite.log"
+store:
+  cluster:
+    - "cass01"
+  keyspace: 'metric'

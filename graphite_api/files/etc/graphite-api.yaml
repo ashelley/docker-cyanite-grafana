@@ -1,0 +1,9 @@
+search_index: /srv/graphite/index
+allowed_origins:
+  - localhost:80
+cyanite:
+  urls:
+    - http://cyanite01:8080
+finders:
+  - cyanite.CyaniteFinder
+
