@@ -15,13 +15,15 @@ Description Of The Components
 Building The Docker Containers
 ==============================
 To build out the project, run the following
-  sudo -s
-  ./build.sh
+    sudo -s
+    ./build.sh
 
 Usage
 =====
 The grafana dashboard is available at http://localhost
+
 Write metrics via graphite at localhost:2003
+
 Run ./test.sh to generate some test metrics - 1 minute load average
 
 [cyanite]: https://github.com/pyr/cyanite
