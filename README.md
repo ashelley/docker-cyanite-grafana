@@ -15,6 +15,7 @@ Description Of The Components
 Building The Docker Containers
 ==============================
 To build out the project, run the following
+
     sudo -s
     ./build.sh
 
