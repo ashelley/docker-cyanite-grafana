@@ -18,3 +18,9 @@ store:
   cluster:
     - "cass01"
   keyspace: 'metric'
+
+index:
+  use: "io.cyanite.es_path/es-rest"
+  index: "cyanite_paths"
+  url: "http://es01:9200"
+  cluster_name: "elasticsearch"
