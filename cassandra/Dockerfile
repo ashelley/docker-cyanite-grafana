@@ -5,7 +5,7 @@ MAINTAINER Mike Brannigan <mikejbrannigan@gmail.com>
 COPY files/etc/yum.repos.d/datastax.repo /etc/yum.repos.d/datastax.repo
 
 # Update the stuff
-RUN yum update -y --quiet
+#RUN yum update -y --quiet
 
 # Install EPEL
 RUN rpm -Uvh --quiet --force http://mirrors.kernel.org/fedora-epel/6/x86_64/epel-release-6-8.noarch.rpm

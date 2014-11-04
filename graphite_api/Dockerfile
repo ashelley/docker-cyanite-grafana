@@ -2,7 +2,7 @@ FROM centos:centos6
 MAINTAINER Mike Brannigan <mikejbrannigan@gmail.com>
 
 # Update the stuff
-RUN yum update -y --quiet 
+#RUN yum update -y --quiet 
 # Install EPEL
 RUN rpm -Uvh --quiet --force http://mirrors.kernel.org/fedora-epel/6/x86_64/epel-release-6-8.noarch.rpm
 
