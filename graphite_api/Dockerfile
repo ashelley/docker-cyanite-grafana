@@ -2,7 +2,7 @@ FROM centos:centos6
 MAINTAINER Mike Brannigan <mikejbrannigan@gmail.com>
 
 # Update the stuff
-#RUN yum update -y --quiet 
+RUN yum update -y --quiet 
 # Install EPEL
 RUN rpm -Uvh --quiet --force http://mirrors.kernel.org/fedora-epel/6/x86_64/epel-release-6-8.noarch.rpm
 
@@ -34,6 +34,7 @@ RUN pip install --quiet cyanite
 
 # Expose /var/log
 VOLUME [ "/var/log" ]
+VOLUME [ "/var/www/html" ]
 
 # graphite-api config
 COPY files/etc/graphite-api.yaml /etc/graphite-api.yaml
@@ -45,8 +46,7 @@ COPY files/etc/httpd/conf.d/graphite.conf /etc/httpd/conf.d/graphite.conf
 COPY files/var/www/wsgi-scripts/graphite-api.wsgi /var/www/wsgi-scripts/graphite-api.wsgi
 
 # Grafana
-RUN git clone https://github.com/grafana/grafana.git /var/www/html
-RUN cd /var/www/html && git checkout v1.8.1
+#ADD http://grafanarel.s3.amazonaws.com/grafana-1.8.1.tar.gz /var/www/html
 
 # Grafana config
 COPY files/var/www/html/config.js /var/www/html/config.js
