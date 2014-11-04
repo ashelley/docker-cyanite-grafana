@@ -6,8 +6,9 @@ RUN yum update -y --quiet
 # Install EPEL
 RUN rpm -Uvh --quiet --force http://mirrors.kernel.org/fedora-epel/6/x86_64/epel-release-6-8.noarch.rpm
 
-# Install wget
+# Install wget and git
 RUN yum install -y --quiet wget
+RUN yum install -y --quiet git
 
 # Install httpd
 RUN yum install -y --quiet httpd
@@ -28,7 +29,7 @@ RUN yum install -y --quiet python-devel
 RUN yum install -y --quiet libffi-devel
 
 # Install graphite-api and cyanite
-RUN pip install --quiet graphite-api 
+RUN pip install --quiet graphite-api
 RUN pip install --quiet cyanite
 
 # Expose /var/log
@@ -44,7 +45,11 @@ COPY files/etc/httpd/conf.d/graphite.conf /etc/httpd/conf.d/graphite.conf
 COPY files/var/www/wsgi-scripts/graphite-api.wsgi /var/www/wsgi-scripts/graphite-api.wsgi
 
 # Grafana
-COPY files/var/www/html/ /var/www/html/
+RUN git clone https://github.com/grafana/grafana.git /var/www/html
+RUN cd /var/www/html && git checkout v1.8.1
+
+# Grafana config
+COPY files/var/www/html/config.js /var/www/html/config.js
 
 # Create graphite directory
 RUN mkdir -p /srv/graphite
