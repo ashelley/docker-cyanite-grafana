@@ -19,6 +19,8 @@ To build out the project, run the following
     sudo -s
     ./build.sh
 
+Alternatively, there is a Vagrantfile in the directory to build out the servers via vagrant
+
 Usage
 =====
 The grafana dashboard is available at http://localhost
